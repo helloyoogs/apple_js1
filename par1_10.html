@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display : none">모달창0</div>
+    <div style="display : none">모달창1</div>
+    <div style="display : none">모달창2</div>
+
+    <button>버튼0</button>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <script>
+
+        //5번 문제 콘솔창에 1초에 한번씩 1부터 5까지의 정수를 출력해주고 싶습니다. 
+
+        //방법1.
+        // for (var i = 1; i < 6; i++) {
+        //     (function (x) {
+        //         setTimeout(function () {
+        //             console.log(x);
+        //         }, 1000 * x);
+        //     })(i);
+        // }
+
+        //방법2.
+        for (let i = 1; i < 6; i++) {
+            setTimeout(function () { console.log(i); }, i * 1000);
+        }
+
+        //6번 문제 버튼을 누르면 모달창을 띄우고 싶습니다. 
+
+        //방법1.
+        var 버튼들 = document.querySelectorAll('button');
+        var 모달창들 = document.querySelectorAll('div');
+
+        for (var i = 0; i < 3; i++) {
+            (function (x) {
+                버튼들[x].addEventListener('click', function () {
+                    모달창들[x].style.display = 'block';
+                });
+            })(i)
+        }
+
+        //방법2.
+        for (let i = 0; i < 3; i++) {
+            버튼들[i].addEventListener('click', function () {
+                모달창들[i].style.display = 'block';
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>

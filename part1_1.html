@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Q1.변수를 마구 만들었는데 말입니다..
+        // var[number, address] = [30, 'seoul'];
+        // var { address: a, number = 20 } = { address, number };
+        // a와 address와 number라는 변수는 각각 무슨 값을 가지고 있을까요 ?
+
+        // 첫 줄을 거치면 number라는 변수는 30, address라는 변수는 'seoul'이 됩니다.
+        // 둘째줄을 약간 보기쉽게 바꿔보자면
+        // var { address: a, number = 20 } = { address: 'seoul', number: 30 };
+        // 이렇게 됩니다.이러면 조금 더 보기쉽죠 ?
+        // 그래서 a는 'seoul'
+        // number는 30
+        // address는 첫줄에서 수정되고 끝나니까 그대로 'seoul'입니다. 
+
+        // Q2.다음과 같은 Object에서 데이터를 뽑아서 변수를 만들고 싶습니다.
+
+        // let 신체정보 = {
+        //     body: {
+        //         height: 190,
+        //         weight: 70
+        //     },
+        //     size: ["상의 Large", "바지 30인치"],
+        // };
+        // 여러분의 뛰어난 신체 정보를 담은 Object입니다. 
+        // 여기서 키, 몸무게, 상의사이즈, 하의사이즈 정보를 각각 뽑아서 4개의 변수를 만들고 싶습니다.
+        // 어떻게 만들면 될까요 ?
+        // (참고: 데이터가 얼마나 복잡하든간에 좌우 형태를 똑같이 맞추시면 destructuring 문법으로 변수를 만들 수 있습니다.)
+
+        let 신체정보 = {
+            body: {
+                height: 190,
+                weight: 70
+            },
+            size: ["상의 Large", "바지 30인치"],
+        };
+
+        let {
+            body: {
+                height,
+                weight
+            },
+            size: [상의, 하의]
+        } = 신체정보;
+        // 잘 보시면 등호를 이용해서 좌우를 똑같이 맞췄습니다. 
+        // 그리고 왼쪽엔 변수명을 적어주었고요. 
+        // 그럼 이제 height, weight, 상의, 하의라는 이름의 변수가 생성됩니다.
+    </script>
+</body>
+
+</html>

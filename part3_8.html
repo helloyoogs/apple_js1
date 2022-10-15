@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        // Q.어떤 놈이 key값 마지막 부분에 오타를 섞어놨습니다.
+        // key값 마지막에 한자릿수 숫자가 섞여있으면 그걸 다 제거하고 싶습니다.
+        // 어떻게 코드를 짜면 될까요 ?
+        var products = [{
+                name1: 'chair',
+                price1: 7000,
+            },
+            {
+                name2: 'sofa',
+                price: 5000,
+            },
+            {
+                name1: 'desk',
+                price3: 9000,
+            },
+        ];
+        let 오브젝트 = {
+            name1: 'chair'
+        }
+
+        //마지막글자를 숫자로변환했을 때 NaN이 안나오면 (숫자면)
+        if (isNaN(parseInt('name1'.slice(-1))) == false) {
+            let newValue = 오브젝트['name1'];
+            let newKey = 'name1'.slice(0, -1); //맨 뒷 문자 제거 방법
+            오브젝트[newKey] = newValue;
+
+            delete 오브젝트['name1']; //원래있던 key 제거
+        }
+
+        console.log(오브젝트)
+    </script>
+</body>
+
+</html>

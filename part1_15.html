@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function 더하기(a ,b, c){
+            console.log(a + b + c)
+        }
+
+        var 어레이 = [10,20,30];
+        더하기(어레이[0], 어레이[1], 어레이[2]);
+
+        더하기.apply(undefined, 어레이);
+        더하기(...어레이);
+
+        var person = {
+            인사 : function(){
+                console.log('안녕')
+            }
+        }
+        
+        var person2 = {
+            name : '손흥민'
+        }
+        person.인사.apply(person2, [1,2]);
+        person.인사.call(person2, 1,2);
+    </script>
+</body>
+</html>

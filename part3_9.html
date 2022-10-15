@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var 심볼 = Symbol('설명');
+
+        var weight = Symbol('내 시크릿 몸무게임');
+        var height = Symbol('내 시크릿 키임');
+
+        var person = { name : 'Kim',[height] : 160};
+        person.weight = 100;
+        person[weight] = 200; //시크릿 몸무게
+        person.height = 150;
+        //직접 입력하면(person[weight]) 나오나 그냥 입력할때(person) 안나옴
+        //반복문에도 안 드니 기존 코드 해칠 염려가 없음
+        for(var key in person){
+            console.log(person[key])
+        }
+
+        var a = Symbol.for('설명1');
+        var b = Symbol.for('설명1');
+        //전역 심볼
+
+        a == b;
+    </script>
+</body>
+</html>

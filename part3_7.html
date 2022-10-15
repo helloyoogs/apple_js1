@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Q.<button>을 누르면 성공 판정하는 Promise & 성공시 '성공했어요'를 출력하려면? -->
+    <button id="button">ㅇㅇㅇ</button>
+    <script>
+     async function 더하기(){
+        var 프로미스 = new Promise(function(성공,실패){
+            document.getElementById('button').addEventListener('click',
+            function(){
+                성공('성공했어요');
+            })
+        });
+
+        var 결과 = await 프로미스;
+        console.log(결과);
+     }
+     더하기();
+    </script>
+</body>
+
+</html>
